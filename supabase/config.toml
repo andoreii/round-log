@@ -1,0 +1,7 @@
+project_id = "round-log"
+
+[auth]
+enable_signup = false
+
+[functions.submit-round]
+verify_jwt = true

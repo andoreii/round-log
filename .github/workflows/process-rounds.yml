@@ -1,0 +1,30 @@
+name: Process submitted rounds
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: process-rounds
+  cancel-in-progress: false
+
+jobs:
+  process:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Install database driver
+        run: python3 -m pip install --no-cache-dir -r pipeline/requirements.txt
+      - name: Check transformations
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: Process pending submissions
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: python3 -m pipeline.process_rounds
