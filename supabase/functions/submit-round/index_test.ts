@@ -78,7 +78,9 @@ Deno.test("does not dispatch finished or throttled duplicate submissions", async
 });
 
 Deno.test("maps revision conflicts without exposing database error details", async () => {
-  const send = responses(auth(), Response.json({ code: "22023", message: "revision_conflict", details: "private" }, { status: 400 }));
-  const response = await handleSubmission(post(), env, send);
-  assert(response.status === 409 && await response.text() === '{"code":"revision_conflict"}');
+  for (const code of ["revision_conflict", "created_at_conflict"]) {
+    const send = responses(auth(), Response.json({ code: "22023", message: code, details: "private" }, { status: 400 }));
+    const response = await handleSubmission(post(), env, send);
+    assert(response.status === 409 && await response.text() === JSON.stringify({ code }));
+  }
 });

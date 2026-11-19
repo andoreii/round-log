@@ -41,6 +41,10 @@ An identical retry reuses its receipt. A changed payload needs a new revision. F
 
 The payload example is `tests/fixtures/nine_holes.json`. It includes unknown fields, explicit zeros, shared par-3 shots, and mixed distance units. `created_at` is the original timezone-aware creation timestamp; corrections preserve it.
 
+The approved table and field definitions are in [the database schema](SCHEMA.md). Course backups use `save_course(course_id, revision, document)`; example documents are `tests/fixtures/course_nine_holes.json` and `course_eighteen_holes.json`. Direct course writes are blocked. Each edit increases its revision; identical retries reuse the saved version.
+
+Round snapshots include `course.hole_count`, `tee.id`, and optional scoped `tee.ratings`. Cleaning selects only the rating for the selected holes. `created_at` uses ISO 8601 with seconds, a timezone, and at most six fractional digits. Changing its original instant returns `created_at_conflict`; edits to round data require a new revision. Submission format is version 1; current transformation is version 2.
+
 Supabase project: `joevrtazhvmhrdmxneow`, Tokyo. Endpoint:
 
 ```text

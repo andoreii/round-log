@@ -2,10 +2,18 @@
 
 from datetime import date, datetime, timezone
 from decimal import Decimal, InvalidOperation
+import re
 from uuid import UUID
 
-TRANSFORM_VERSION = 1
+TRANSFORM_VERSION = 2
 OUTCOMES = {"hit", "left", "right", "short", "long", "short_left", "short_right", "long_left", "long_right"}
+CLUB_ALIASES = {
+    "d": "driver", "1w": "driver", "1wood": "driver", "driver": "driver",
+    "p": "pw", "pw": "pw", "pitchingwedge": "pw",
+    "a": "gw", "aw": "gw", "gw": "gw", "approachwedge": "gw", "attackwedge": "gw", "gapwedge": "gw",
+    "sw": "sw", "sandwedge": "sw", "lw": "lw", "lobwedge": "lw",
+    "pt": "putter", "putter": "putter",
+}
 
 
 class ValidationError(ValueError):
@@ -65,18 +73,55 @@ def metres(value, unit, code, nullable=False):
     return value * Decimal("0.9144") if unit == "yd" else value
 
 
+def club(value, code):
+    value = text(value, code, 100, nullable=True)
+    if value is None:
+        return None
+    label = re.sub(r"[\s_-]+", "", value.lower())
+    if label in CLUB_ALIASES:
+        return CLUB_ALIASES[label]
+    match = re.fullmatch(r"([1-9])(w|wood|h|hybrid|i|iron)", label)
+    require(match is not None, code)
+    return match[1] + match[2][0]
+
+
 def shot(value, code):
     if value is None:
         return {"club": None, "x": None, "y": None, "outcome": None}
     require(isinstance(value, dict), code)
     outcome = value.get("outcome")
     require(outcome is None or (isinstance(outcome, str) and outcome in OUTCOMES), code)
+    x = number(value.get("x"), code, maximum=1, nullable=True)
+    y = number(value.get("y"), code, maximum=1, nullable=True)
+    require((x is None) == (y is None), code)
     return {
-        "club": text(value.get("club"), code, 100, nullable=True),
-        "x": number(value.get("x"), code, maximum=1, nullable=True),
-        "y": number(value.get("y"), code, maximum=1, nullable=True),
+        "club": club(value.get("club"), code),
+        "x": x,
+        "y": y,
         "outcome": outcome,
     }
+
+
+def ratings(value, hole_count):
+    if value is None:
+        return {}
+    require(isinstance(value, dict), "invalid_ratings")
+    scopes = {"full"} if hole_count == 9 else {"full", "front_nine", "back_nine"}
+    require(set(value) <= scopes, "invalid_ratings")
+    clean = {}
+    for scope, pair in value.items():
+        if pair is None:
+            pair = {}
+        require(isinstance(pair, dict) and set(pair) <= {"course_rating", "slope_rating"}, "invalid_ratings")
+        course_rating = number(pair.get("course_rating"), "invalid_course_rating", nullable=True)
+        if course_rating is not None:
+            digits, exponent = course_rating.as_tuple()[1:]
+            require(course_rating > 0 and (exponent >= -1 or not any(digits[exponent + 1:])), "invalid_course_rating")
+        clean[scope] = {
+            "course_rating": course_rating,
+            "slope_rating": integer(pair.get("slope_rating"), "invalid_slope_rating", 55, 155, nullable=True),
+        }
+    return clean
 
 
 def transform(payload):
@@ -90,12 +135,15 @@ def transform(payload):
     except ValueError:
         raise ValidationError("invalid_date") from None
     created_at = payload.get("created_at")
-    require(isinstance(created_at, str), "invalid_created_at")
+    require(isinstance(created_at, str) and re.fullmatch(
+        r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\.[0-9]{1,6})?(?:Z|[+-][0-9]{2}:[0-9]{2})",
+        created_at), "invalid_created_at")
     try:
-        created_at = datetime.fromisoformat(created_at.replace("Z", "+00:00"))
+        timestamp_format = "%Y-%m-%dT%H:%M:%S.%f%z" if "." in created_at else "%Y-%m-%dT%H:%M:%S%z"
+        created_at = datetime.strptime(created_at, timestamp_format)
         require(created_at.tzinfo is not None and created_at.utcoffset() is not None, "invalid_created_at")
         created_at = created_at.astimezone(timezone.utc)
-    except ValueError:
+    except (ValueError, OverflowError):
         raise ValidationError("invalid_created_at") from None
     round_type = payload.get("round_type")
     require(round_type in ("casual", "competition", "tournament", "practice"), "invalid_round_type")
@@ -105,6 +153,9 @@ def transform(payload):
     require(planned in (9, 18), "invalid_hole_count")
     course, tee = payload.get("course"), payload.get("tee")
     require(isinstance(course, dict) and isinstance(tee, dict), "invalid_course")
+    hole_count = integer(course.get("hole_count"), "invalid_course_hole_count", 9, 18)
+    require(hole_count in (9, 18) and planned <= hole_count, "invalid_course_hole_count")
+    tee_ratings = ratings(tee.get("ratings"), hole_count)
     unit = course.get("distance_unit")
     require(unit in ("yd", "m"), "invalid_distance_unit")
     result = {
@@ -113,7 +164,8 @@ def transform(payload):
         "course_id": identifier(course.get("id"), "invalid_course_id"),
         "course_name": text(course.get("name"), "invalid_course_name", 200),
         "course_location": text(course.get("location"), "invalid_course_location", 300, nullable=True),
-        "distance_unit": unit, "tee_name": text(tee.get("name"), "invalid_tee_name", 100),
+        "distance_unit": unit, "tee_id": identifier(tee.get("id"), "invalid_tee_id"),
+        "tee_name": text(tee.get("name"), "invalid_tee_name", 100),
         "weather": text(payload.get("weather"), "invalid_weather", 500, nullable=True),
         "notes": text(payload.get("notes"), "invalid_notes", 4000, nullable=True),
     }
@@ -152,6 +204,9 @@ def transform(payload):
     numbers = {hole["number"] for hole in clean_holes}
     expected = [set(range(1, 10)), set(range(10, 19))] if planned == 9 else [set(range(1, 19))]
     require(numbers in expected, "invalid_hole_numbers")
+    require(hole_count != 9 or numbers == set(range(1, 10)), "invalid_hole_numbers")
+    rating_scope = "full" if planned == hole_count else ("front_nine" if 1 in numbers else "back_nine")
+    result.update(tee_ratings.get(rating_scope, {"course_rating": None, "slope_rating": None}))
     require(len({hole["stroke_index"] for hole in clean_holes}) == planned, "duplicate_stroke_index")
     scored = sum(hole["strokes"] is not None for hole in clean_holes)
     require(scored > 0, "empty_round")

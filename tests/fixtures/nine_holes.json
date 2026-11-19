@@ -10,12 +10,17 @@
   "notes": "Synthetic fixture",
   "course": {
     "id": "00000000-0000-4000-8000-000000000002",
+    "hole_count": 9,
     "name": "Sample Links",
     "location": "Test course",
     "distance_unit": "yd"
   },
   "tee": {
-    "name": "White"
+    "id": "00000000-0000-4000-8000-000000000003",
+    "name": "White",
+    "ratings": {
+      "full": { "course_rating": 35.9, "slope_rating": 125 }
+    }
   },
   "holes": [
     {

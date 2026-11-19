@@ -121,8 +121,8 @@ export async function handleSubmission(
         return reply(401, { code: "authentication_required" });
       }
       if (error.code === "22023") {
-        return error.message === "revision_conflict"
-          ? reply(409, { code: "revision_conflict" })
+        return error.message === "revision_conflict" || error.message === "created_at_conflict"
+          ? reply(409, { code: error.message })
           : reply(422, { code: "invalid_envelope" });
       }
       return reply(503, { code: "submission_unavailable" });

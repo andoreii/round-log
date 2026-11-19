@@ -22,7 +22,7 @@ The copied interface is a temporary starting point. Golf screens, branding, and 
 
 ## Course library
 
-Manually create and edit courses with a name, location, nine or eighteen numbered holes, each hole's par and stroke index, and named tee sets with distances. Support yards and metres. Stroke index means hole difficulty ordering; it is not the player's Handicap Index.
+Manually create and edit courses with a name, location, nine or eighteen numbered holes, each hole's par and stroke index, and named tee sets with distances. Support yards and metres. Tee sets share pars and stroke indexes. Store optional course and slope ratings per tee, with separate full/front/back ratings where supplied. Stroke index means hole difficulty ordering; it is not the player's Handicap Index.
 
 Keep the library available offline. Queue owner-scoped cloud backups when courses are created or edited, including courses never played. Course backup does not start round processing.
 
@@ -30,7 +30,7 @@ Starting a round copies the selected course, tee, units, hole numbers, pars, str
 
 ## Round setup and lifecycle
 
-Choose a course, played date, tee, round type (casual, competition, tournament, practice), manually entered weather, notes, and initial recording mode. Select front nine, back nine, or eighteen holes as appropriate for the course.
+Choose a course, played date, tee, round type (casual, competition, tournament, practice), a short manually entered weather note, notes, and initial recording mode. Select front nine, back nine, or eighteen holes as appropriate for the course.
 
 Lifecycle: start, record, pause/resume, end, review, submit. Ending early creates a partial round. Blank holes remain unplayed. Only one active round needs a prominent Resume action; history can contain several saved drafts.
 
@@ -105,7 +105,7 @@ Show separate states for saved locally, uploaded/pending processing, processed, 
 | Run records and issues | Counts, processing version, and safe validation codes |
 | SQL views | Owner-scoped status, summaries, and latest-twenty analytics |
 
-Raw and clean tables live in the same Supabase PostgreSQL database. Python is the processor, not another permanent data store. PostgreSQL enforces keys, ownership relationships, allowed values, and uniqueness. Keep migrations in source control.
+Raw and clean tables live in the same Supabase PostgreSQL database. Python is the processor, not another permanent data store. PostgreSQL enforces keys, ownership relationships, allowed values, and uniqueness. Keep migrations in source control. See [the approved schema](SCHEMA.md) for table definitions and validation rules.
 
 ## Validation and analytics
 
