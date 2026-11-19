@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D6409654A92BBD0F7224F3E /* RoundLog/ScreenEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4311DDAE1C3E4B28FC0B13 /* RoundLog/ScreenEdge.swift */; };
+		1C854B6F3516601310E58950 /* RoundLog/Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A750702BA7F8A744C1372C /* RoundLog/Models.swift */; };
+		21F13CE871165FADBC63013E /* RoundLog/Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C457D6B8A23D9B661B4D7373 /* RoundLog/Motion.swift */; };
+		2F9C9804DC9F054747769CEF /* RoundLog/Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383721CEE31C7BE5403BDBFF /* RoundLog/Design.swift */; };
+		3AE5678427459DC05EE03E4E /* RoundLog/Resources/afternoon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1A867E3A2B705E00558318C2 /* RoundLog/Resources/afternoon.mp4 */; };
+		440ED22A1C25304701525FD8 /* RoundLog/RoundLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C737DD892D46CCFDA745987 /* RoundLog/RoundLogApp.swift */; };
+		745B8AC57B52174040D55A67 /* RoundLog/SettingsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CFBDD3962140149994852C /* RoundLog/SettingsViews.swift */; };
+		76BC66982E0DA89461E5563E /* RoundLogUITests/FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D75554B44D539B98B53AF0 /* RoundLogUITests/FlowTests.swift */; };
+		7D80E1B2EECDB02B7FB4368E /* RoundLogTests/StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3EAFC75C0C01AEB5DA1166 /* RoundLogTests/StoreTests.swift */; };
+		A5746FD44F70390E9C1A90A6 /* RoundLog/RoomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E6D656CEF2B799F8A374AA /* RoundLog/RoomViews.swift */; };
+		AFC5BCB70FDF854C9029AC95 /* RoundLog/Resources/morning.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 95900C61DD8ED18CAC1F2BA3 /* RoundLog/Resources/morning.mp4 */; };
+		DA465F3003E063483B51CF2C /* RoundLog/ModalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDE7298F69E310C0479BAD /* RoundLog/ModalViews.swift */; };
+		F5750C911DD81066B86A0FBB /* RoundLog/Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BDCEE99AEBFDF4218365357 /* RoundLog/Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C9B8C1320F0F7C409F7C9BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD48997C3C67BD93DD99E073;
+			remoteInfo = RoundLog;
+		};
+		B437DDDE2D37F2732DA1B930 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD48997C3C67BD93DD99E073;
+			remoteInfo = RoundLog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11E6D656CEF2B799F8A374AA /* RoundLog/RoomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/RoomViews.swift; sourceTree = "<group>"; };
+		1A867E3A2B705E00558318C2 /* RoundLog/Resources/afternoon.mp4 */ = {isa = PBXFileReference; lastKnownFileType = video.mp4; path = RoundLog/Resources/afternoon.mp4; sourceTree = "<group>"; };
+		35D75554B44D539B98B53AF0 /* RoundLogUITests/FlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLogUITests/FlowTests.swift; sourceTree = "<group>"; };
+		383721CEE31C7BE5403BDBFF /* RoundLog/Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/Design.swift; sourceTree = "<group>"; };
+		3C737DD892D46CCFDA745987 /* RoundLog/RoundLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/RoundLogApp.swift; sourceTree = "<group>"; };
+		495820F50B1452DEE4F80892 /* RoundLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoundLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52CFBDD3962140149994852C /* RoundLog/SettingsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/SettingsViews.swift; sourceTree = "<group>"; };
+		7BDCEE99AEBFDF4218365357 /* RoundLog/Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RoundLog/Assets.xcassets; sourceTree = "<group>"; };
+		7C390731355D8BD988B9BFD8 /* RoundLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoundLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F4311DDAE1C3E4B28FC0B13 /* RoundLog/ScreenEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/ScreenEdge.swift; sourceTree = "<group>"; };
+		95900C61DD8ED18CAC1F2BA3 /* RoundLog/Resources/morning.mp4 */ = {isa = PBXFileReference; lastKnownFileType = video.mp4; path = RoundLog/Resources/morning.mp4; sourceTree = "<group>"; };
+		A9A750702BA7F8A744C1372C /* RoundLog/Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/Models.swift; sourceTree = "<group>"; };
+		BDCDE7298F69E310C0479BAD /* RoundLog/ModalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/ModalViews.swift; sourceTree = "<group>"; };
+		C3399C4C51E40CC211D8564F /* RoundLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoundLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C457D6B8A23D9B661B4D7373 /* RoundLog/Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/Motion.swift; sourceTree = "<group>"; };
+		FC3EAFC75C0C01AEB5DA1166 /* RoundLogTests/StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLogTests/StoreTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7C8291E851F0EA0A6958167E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5B82B30A68A3B0CBBEE8FFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5C145297409273361F18B32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09CBAC37BF8936C01EF224CE /* RoundLog */ = {
+			isa = PBXGroup;
+			children = (
+				383721CEE31C7BE5403BDBFF /* RoundLog/Design.swift */,
+				BDCDE7298F69E310C0479BAD /* RoundLog/ModalViews.swift */,
+				A9A750702BA7F8A744C1372C /* RoundLog/Models.swift */,
+				C457D6B8A23D9B661B4D7373 /* RoundLog/Motion.swift */,
+				11E6D656CEF2B799F8A374AA /* RoundLog/RoomViews.swift */,
+				7F4311DDAE1C3E4B28FC0B13 /* RoundLog/ScreenEdge.swift */,
+				3C737DD892D46CCFDA745987 /* RoundLog/RoundLogApp.swift */,
+				52CFBDD3962140149994852C /* RoundLog/SettingsViews.swift */,
+				1A867E3A2B705E00558318C2 /* RoundLog/Resources/afternoon.mp4 */,
+				95900C61DD8ED18CAC1F2BA3 /* RoundLog/Resources/morning.mp4 */,
+				7BDCEE99AEBFDF4218365357 /* RoundLog/Assets.xcassets */,
+			);
+			name = RoundLog;
+			sourceTree = "<group>";
+		};
+		26E7C810AB0F64B0C2CC79E0 /* RoundLogTests */ = {
+			isa = PBXGroup;
+			children = (
+				FC3EAFC75C0C01AEB5DA1166 /* RoundLogTests/StoreTests.swift */,
+			);
+			name = RoundLogTests;
+			sourceTree = "<group>";
+		};
+		B28B7AF69320201D1CF206EB = {
+			isa = PBXGroup;
+			children = (
+				09CBAC37BF8936C01EF224CE /* RoundLog */,
+				26E7C810AB0F64B0C2CC79E0 /* RoundLogTests */,
+				F1E2BCAA12B9E874F256F8CA /* RoundLogUITests */,
+				FBDC4F23F93125BBEEAE800C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F1E2BCAA12B9E874F256F8CA /* RoundLogUITests */ = {
+			isa = PBXGroup;
+			children = (
+				35D75554B44D539B98B53AF0 /* RoundLogUITests/FlowTests.swift */,
+			);
+			name = RoundLogUITests;
+			sourceTree = "<group>";
+		};
+		FBDC4F23F93125BBEEAE800C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7C390731355D8BD988B9BFD8 /* RoundLog.app */,
+				495820F50B1452DEE4F80892 /* RoundLogTests.xctest */,
+				C3399C4C51E40CC211D8564F /* RoundLogUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8BD134441854126656EA36E1 /* RoundLogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1F57DDF0453B592BC5F7076 /* Build configuration list for PBXNativeTarget "RoundLogTests" */;
+			buildPhases = (
+				B8153F00E6D4AD0EB1371DEC /* Sources */,
+				7C8291E851F0EA0A6958167E /* Frameworks */,
+				B27A3205A0E719367A3EB352 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BF9E5A552032A2C1A539150 /* PBXTargetDependency */,
+			);
+			name = RoundLogTests;
+			productName = RoundLogTests;
+			productReference = 495820F50B1452DEE4F80892 /* RoundLogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C38C869BDBB57E6F29882CED /* RoundLogUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 873E1329FE74B2258538F396 /* Build configuration list for PBXNativeTarget "RoundLogUITests" */;
+			buildPhases = (
+				9FD8EA925569158F3C2A859A /* Sources */,
+				F5C145297409273361F18B32 /* Frameworks */,
+				43FA4F4CBCF85574792DC125 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0080963E55E765207E7F57B6 /* PBXTargetDependency */,
+			);
+			name = RoundLogUITests;
+			productName = RoundLogUITests;
+			productReference = C3399C4C51E40CC211D8564F /* RoundLogUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		FD48997C3C67BD93DD99E073 /* RoundLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 228EA4C4567E3B28D5027855 /* Build configuration list for PBXNativeTarget "RoundLog" */;
+			buildPhases = (
+				1F42459B455CFC0A62555274 /* Sources */,
+				B5B82B30A68A3B0CBBEE8FFA /* Frameworks */,
+				F5E7CE9206C6BD08A78F5077 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RoundLog;
+			productName = RoundLog;
+			productReference = 7C390731355D8BD988B9BFD8 /* RoundLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98F54143AB4E86B28C3AFEE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2660;
+			};
+			buildConfigurationList = 862894B703A6DEDF96A9DD6C /* Build configuration list for PBXProject "RoundLog" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B28B7AF69320201D1CF206EB;
+			productRefGroup = FBDC4F23F93125BBEEAE800C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD48997C3C67BD93DD99E073 /* RoundLog */,
+				8BD134441854126656EA36E1 /* RoundLogTests */,
+				C38C869BDBB57E6F29882CED /* RoundLogUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43FA4F4CBCF85574792DC125 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B27A3205A0E719367A3EB352 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E7CE9206C6BD08A78F5077 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE5678427459DC05EE03E4E /* RoundLog/Resources/afternoon.mp4 in Resources */,
+				AFC5BCB70FDF854C9029AC95 /* RoundLog/Resources/morning.mp4 in Resources */,
+				F5750C911DD81066B86A0FBB /* RoundLog/Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F42459B455CFC0A62555274 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F9C9804DC9F054747769CEF /* RoundLog/Design.swift in Sources */,
+				DA465F3003E063483B51CF2C /* RoundLog/ModalViews.swift in Sources */,
+				1C854B6F3516601310E58950 /* RoundLog/Models.swift in Sources */,
+				21F13CE871165FADBC63013E /* RoundLog/Motion.swift in Sources */,
+				A5746FD44F70390E9C1A90A6 /* RoundLog/RoomViews.swift in Sources */,
+				0D6409654A92BBD0F7224F3E /* RoundLog/ScreenEdge.swift in Sources */,
+				440ED22A1C25304701525FD8 /* RoundLog/RoundLogApp.swift in Sources */,
+				745B8AC57B52174040D55A67 /* RoundLog/SettingsViews.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FD8EA925569158F3C2A859A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76BC66982E0DA89461E5563E /* RoundLogUITests/FlowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8153F00E6D4AD0EB1371DEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D80E1B2EECDB02B7FB4368E /* RoundLogTests/StoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0080963E55E765207E7F57B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD48997C3C67BD93DD99E073 /* RoundLog */;
+			targetProxy = 4C9B8C1320F0F7C409F7C9BC /* PBXContainerItemProxy */;
+		};
+		5BF9E5A552032A2C1A539150 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD48997C3C67BD93DD99E073 /* RoundLog */;
+			targetProxy = B437DDDE2D37F2732DA1B930 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		24EB1EF2D8140C3C22768817 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5SVN79YA2L;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "round-log";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 2.8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrei.roundlog;
+				PRODUCT_NAME = RoundLog;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		6AD0662C55F54ACD999EB201 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_TESTABILITY = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrei.roundlogtests;
+				PRODUCT_NAME = RoundLogTests;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoundLog.app/RoundLog";
+			};
+			name = Release;
+		};
+		774F8E6477B9C851DDE56503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrei.roundlogtests;
+				PRODUCT_NAME = RoundLogTests;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoundLog.app/RoundLog";
+			};
+			name = Debug;
+		};
+		89E1FD6268CC0F221A2BE178 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A888B4D5E9D09DAD10786A61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5SVN79YA2L;
+				ENABLE_TESTABILITY = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "round-log";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 2.8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrei.roundlog;
+				PRODUCT_NAME = RoundLog;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B724D4F74AD4F2A35B3CD9A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrei.roundloguitests;
+				PRODUCT_NAME = RoundLogUITests;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = RoundLog;
+			};
+			name = Debug;
+		};
+		E6DE6C99132752C914FEF632 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_TESTABILITY = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		FE3DC9CBD2B1A150583B6103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_TESTABILITY = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrei.roundloguitests;
+				PRODUCT_NAME = RoundLogUITests;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = RoundLog;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		228EA4C4567E3B28D5027855 /* Build configuration list for PBXNativeTarget "RoundLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24EB1EF2D8140C3C22768817 /* Debug */,
+				A888B4D5E9D09DAD10786A61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		862894B703A6DEDF96A9DD6C /* Build configuration list for PBXProject "RoundLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89E1FD6268CC0F221A2BE178 /* Debug */,
+				E6DE6C99132752C914FEF632 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		873E1329FE74B2258538F396 /* Build configuration list for PBXNativeTarget "RoundLogUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B724D4F74AD4F2A35B3CD9A8 /* Debug */,
+				FE3DC9CBD2B1A150583B6103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1F57DDF0453B592BC5F7076 /* Build configuration list for PBXNativeTarget "RoundLogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				774F8E6477B9C851DDE56503 /* Debug */,
+				6AD0662C55F54ACD999EB201 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+}
