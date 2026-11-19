@@ -2,11 +2,15 @@
 
 A personal iPhone golf journal with offline recording and Python/SQL round analytics.
 
-The first milestone preserves the existing Setlog interface under the Round Log app identity. The backend is separate; golf recording screens and their connection to cloud data come next. See [the project outline](PROJECT-OUTLINE.md) for the full scope.
+The imported Setlog interface remains the design base. Golf models, protected local storage, cloud sync, and analytics are implemented; golf screens and their controls come next. See [the project outline](PROJECT-OUTLINE.md) for the full scope.
 
 ## iPhone app
 
 Open `RoundLog.xcodeproj`, select the `RoundLog` scheme, and run an iPhone simulator on iOS 26 or later. Choose your development team for a physical device. Existing account and export screens are local demonstrations.
+
+`GolfServices` owns the golf store and Supabase session. Course edits save and queue backups automatically. `GolfStore.freezeSubmission` persists an explicit submission before sending; retries use that frozen snapshot. Foreground and connectivity changes retry queued work. Later edits require another submission.
+
+Golf files live under Application Support, with atomic writes and iOS file protection. Sessions live in Keychain. The store keeps recent twenty finished rounds plus stars, protects work awaiting backup, and restores missing recent history after sync. Offline summaries preserve unknown values and separate nine-hole, eighteen-hole, and partial rounds.
 
 ## Local checks
 
@@ -20,13 +24,13 @@ python3 -B -m unittest discover -s tests -p 'test_*.py'
 
 Hooks check commit attribution, staged first-party text, and the 5 MiB file limit. They are local checks, not server enforcement. Keep generated output and personal data outside Git.
 
-For native tests, replace `DEVICE_ID` with an available simulator:
+For native logic tests, replace `DEVICE_ID` with an available simulator:
 
 ```sh
 xcodebuild -project RoundLog.xcodeproj -scheme RoundLog \
   -destination 'platform=iOS Simulator,id=DEVICE_ID' \
   -derivedDataPath /tmp/round-log-derived-data \
-  -parallel-testing-enabled NO test CODE_SIGNING_ALLOWED=NO
+  -only-testing:RoundLogTests test CODE_SIGNING_ALLOWED=NO
 ```
 
 ## Submitted-round pipeline

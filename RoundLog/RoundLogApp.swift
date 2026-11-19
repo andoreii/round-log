@@ -40,11 +40,20 @@ struct PresentedSheet: Identifiable { let id = UUID(); var kind: Modal }
 @main struct RoundLogApp: App {
     @State private var store = AppStore()
     @State private var router = AppRouter()
+    @State private var golf = GolfServices()
+    @Environment(\.scenePhase) private var scenePhase
     var body: some Scene {
         WindowGroup {
             RootView().environment(store).environment(router).preferredColorScheme(.light)
                 .tint(Palette.accent(store.state.profile.color))
+                .task { updateGolfActivity(scenePhase) }
+                .onChange(of: scenePhase) { _, phase in updateGolfActivity(phase) }
         }
+    }
+
+    private func updateGolfActivity(_ phase: ScenePhase) {
+        guard !store.isTesting, ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil else { return }
+        golf.setActive(phase == .active)
     }
 }
 

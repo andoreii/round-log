@@ -20,6 +20,15 @@
 		AFC5BCB70FDF854C9029AC95 /* RoundLog/Resources/morning.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 95900C61DD8ED18CAC1F2BA3 /* RoundLog/Resources/morning.mp4 */; };
 		DA465F3003E063483B51CF2C /* RoundLog/ModalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDE7298F69E310C0479BAD /* RoundLog/ModalViews.swift */; };
 		F5750C911DD81066B86A0FBB /* RoundLog/Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BDCEE99AEBFDF4218365357 /* RoundLog/Assets.xcassets */; };
+		B43D78A50D81FC480CDBB61C /* RoundLog/GolfModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C1EFB7300ECB24FEB809D2 /* RoundLog/GolfModels.swift */; };
+		6D09172067A43146CFD34030 /* RoundLog/GolfAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068549F2C4EB1A28BE10F4AC /* RoundLog/GolfAnalytics.swift */; };
+		6402765270AC5793551F744F /* RoundLog/GolfCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E69C94D47CE925C6DBCA6 /* RoundLog/GolfCloud.swift */; };
+		1ABF86D81823E3AE8087609D /* RoundLog/GolfStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C06EF73C948095901F8B1EE /* RoundLog/GolfStore.swift */; };
+		499312153956F5DBC5178774 /* RoundLog/GolfServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1320A48FBA1B4E6797D1D0 /* RoundLog/GolfServices.swift */; };
+		D8E44B525002BA109A53F71E /* RoundLogTests/GolfModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F940D83E73492959DC567E4 /* RoundLogTests/GolfModelTests.swift */; };
+		3DB9359BBA26A89227981DAC /* RoundLogTests/GolfCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13935C40B9B3ACC66DE75265 /* RoundLogTests/GolfCloudTests.swift */; };
+		B540F64D3F3E8151F553CE15 /* RoundLogTests/GolfStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA233FB1F6D296674FB12A16 /* RoundLogTests/GolfStoreTests.swift */; };
+		CCF349021A21E47807F4401B /* fixtures in Resources */ = {isa = PBXBuildFile; fileRef = D131575A975EA2D182ECEAED /* fixtures */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +65,15 @@
 		C3399C4C51E40CC211D8564F /* RoundLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoundLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C457D6B8A23D9B661B4D7373 /* RoundLog/Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/Motion.swift; sourceTree = "<group>"; };
 		FC3EAFC75C0C01AEB5DA1166 /* RoundLogTests/StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLogTests/StoreTests.swift; sourceTree = "<group>"; };
+		54C1EFB7300ECB24FEB809D2 /* RoundLog/GolfModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/GolfModels.swift; sourceTree = "<group>"; };
+		068549F2C4EB1A28BE10F4AC /* RoundLog/GolfAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/GolfAnalytics.swift; sourceTree = "<group>"; };
+		1A6E69C94D47CE925C6DBCA6 /* RoundLog/GolfCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/GolfCloud.swift; sourceTree = "<group>"; };
+		0C06EF73C948095901F8B1EE /* RoundLog/GolfStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/GolfStore.swift; sourceTree = "<group>"; };
+		FB1320A48FBA1B4E6797D1D0 /* RoundLog/GolfServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLog/GolfServices.swift; sourceTree = "<group>"; };
+		2F940D83E73492959DC567E4 /* RoundLogTests/GolfModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLogTests/GolfModelTests.swift; sourceTree = "<group>"; };
+		13935C40B9B3ACC66DE75265 /* RoundLogTests/GolfCloudTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLogTests/GolfCloudTests.swift; sourceTree = "<group>"; };
+		BA233FB1F6D296674FB12A16 /* RoundLogTests/GolfStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLogTests/GolfStoreTests.swift; sourceTree = "<group>"; };
+		D131575A975EA2D182ECEAED /* fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fixtures; path = tests/fixtures; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +104,11 @@
 		09CBAC37BF8936C01EF224CE /* RoundLog */ = {
 			isa = PBXGroup;
 			children = (
+				54C1EFB7300ECB24FEB809D2 /* RoundLog/GolfModels.swift */,
+				068549F2C4EB1A28BE10F4AC /* RoundLog/GolfAnalytics.swift */,
+				1A6E69C94D47CE925C6DBCA6 /* RoundLog/GolfCloud.swift */,
+				0C06EF73C948095901F8B1EE /* RoundLog/GolfStore.swift */,
+				FB1320A48FBA1B4E6797D1D0 /* RoundLog/GolfServices.swift */,
 				383721CEE31C7BE5403BDBFF /* RoundLog/Design.swift */,
 				BDCDE7298F69E310C0479BAD /* RoundLog/ModalViews.swift */,
 				A9A750702BA7F8A744C1372C /* RoundLog/Models.swift */,
@@ -104,6 +127,10 @@
 		26E7C810AB0F64B0C2CC79E0 /* RoundLogTests */ = {
 			isa = PBXGroup;
 			children = (
+				2F940D83E73492959DC567E4 /* RoundLogTests/GolfModelTests.swift */,
+				13935C40B9B3ACC66DE75265 /* RoundLogTests/GolfCloudTests.swift */,
+				BA233FB1F6D296674FB12A16 /* RoundLogTests/GolfStoreTests.swift */,
+				D131575A975EA2D182ECEAED /* fixtures */,
 				FC3EAFC75C0C01AEB5DA1166 /* RoundLogTests/StoreTests.swift */,
 			);
 			name = RoundLogTests;
@@ -234,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCF349021A21E47807F4401B /* fixtures in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +282,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B43D78A50D81FC480CDBB61C /* RoundLog/GolfModels.swift in Sources */,
+				6D09172067A43146CFD34030 /* RoundLog/GolfAnalytics.swift in Sources */,
+				6402765270AC5793551F744F /* RoundLog/GolfCloud.swift in Sources */,
+				1ABF86D81823E3AE8087609D /* RoundLog/GolfStore.swift in Sources */,
+				499312153956F5DBC5178774 /* RoundLog/GolfServices.swift in Sources */,
 				2F9C9804DC9F054747769CEF /* RoundLog/Design.swift in Sources */,
 				DA465F3003E063483B51CF2C /* RoundLog/ModalViews.swift in Sources */,
 				1C854B6F3516601310E58950 /* RoundLog/Models.swift in Sources */,
@@ -277,6 +310,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E44B525002BA109A53F71E /* RoundLogTests/GolfModelTests.swift in Sources */,
+				3DB9359BBA26A89227981DAC /* RoundLogTests/GolfCloudTests.swift in Sources */,
+				B540F64D3F3E8151F553CE15 /* RoundLogTests/GolfStoreTests.swift in Sources */,
 				7D80E1B2EECDB02B7FB4368E /* RoundLogTests/StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

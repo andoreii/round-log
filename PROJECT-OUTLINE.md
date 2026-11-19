@@ -134,12 +134,16 @@ Use single-author commit messages without tool attribution. Local checks reject 
 
 Keep this outline as the source of project decisions. Keep README focused on running the app and worker. Comments explain a reason the code cannot show. Avoid duplicate documents, generated reports, vendored dependencies, large samples, build outputs, and media captures. Commit lockfiles and only the dependencies required to run the app and pipeline.
 
-## Verification and later work
+## Current progress and verification
+
+The imported app, repository checks, hosted schema, submission endpoint, Python worker, and SQL views are complete. The worker has processed a synthetic round through the hosted pipeline; its fixtures were removed afterward.
+
+Native golf models, validation, protected autosave, course snapshots, frozen submission retries, Keychain sessions, course backups, starring, restore, retention, and offline analytics are implemented. Foreground and connectivity events trigger bounded retries. Existing screens remain the imported base and do not expose these services yet.
 
 Foundation checks: renamed app build and launch, hook acceptance/rejection, compact Python validation tests, transactional ingestion/retry checks, revision ordering, metric denominators, and anonymous/other-user denial. Use small fixtures and focused assertions rather than coverage targets or exhaustive suites.
 
-After golf screens exist, verify offline relaunch, score persistence, mode switching, course snapshots, edit/submission races, starring, safe trimming, accessibility, Reduce Motion, and scoring on the actual iPhone.
+Focused native tests cover relaunch, corrupt-file protection, frozen retries during edits, course snapshots, metric coverage, restore, safe trimming, and account isolation. Python checks cover transformation and analytics. Hosted database checks cover revisions, ownership, and transaction safety.
 
-The foundation does not claim the golf recording interface is built. Subsequent work replaces the temporary screens, adds protected local golf storage and sync, then connects the on-device summaries and retention rules.
+Remaining work connects the services to golf screens, applies the golf and Zen designs, and checks the complete recording flow on the actual iPhone. Verify accessibility, Reduce Motion, secure sign-in, and offline recovery through those screens.
 
 Out of scope: public onboarding, App Store release, multiplayer, GPS, automatic weather, external dashboards, daily jobs, warehouses, orchestration frameworks, and a large test suite. Use free resources only; review any paid change before adding it.
